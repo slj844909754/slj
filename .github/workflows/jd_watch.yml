@@ -1,17 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-//活动地址：https://starsingle.m.jd.com/static/index.html#/?fromChangeSkinNum=PUBG
 
-name: jd_pubg PUBG
+name: jd_joy_feedPets 宠汪汪喂食脚本
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '45 15 * * *'
+    - cron: '10 9 * * *'
   # watch:
-  #       types: started
+  #   types: [started]
   repository_dispatch:
-    types: unsubscribe
+    types: jd_watch
 jobs:
   build:
 
@@ -32,20 +31,20 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【PUBG】'
+      - name: '运行 【京东看一看脚本】'
         run: |
           cd  ~/scripts
           npm install
-          node jd_pubg.js
+          node jd_watch.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
-          UN_SUBSCRIBES: ${{ secrets.UN_SUBSCRIBES }}
+          JOY_FEED_COUNT: ${{ secrets.JOY_FEED_COUNT }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          BARK_SOUND: ${{ secrets.BARK_SOUND }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
-          BARK_SOUND: ${{ secrets.BARK_SOUND }}
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
