@@ -4,6 +4,7 @@
 name: jd_joy 宠汪汪
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '0 0,1,4,10,15,16 * * *'

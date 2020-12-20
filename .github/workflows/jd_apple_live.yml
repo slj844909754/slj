@@ -4,6 +4,7 @@
 name:  jd_apple_live 苹果抽奖机
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '10 0 * * *'

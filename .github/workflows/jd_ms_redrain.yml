@@ -4,6 +4,7 @@
 name: jd_ms_redrain 秒杀红包雨
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '10 7 * * *'

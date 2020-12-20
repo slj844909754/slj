@@ -4,6 +4,7 @@
 name: jd_necklace 点点券
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '10 16,12 * * *'

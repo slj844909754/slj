@@ -4,6 +4,7 @@
 name: jd_dreamFactory 京喜工厂
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '15 * * * *'

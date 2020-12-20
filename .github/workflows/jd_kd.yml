@@ -4,6 +4,7 @@
 name:  jd_kd 京东快递签到
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '10 0 * * *'

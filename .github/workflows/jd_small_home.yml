@@ -4,6 +4,7 @@
 name: jd_small_home 东东小窝
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '0 16 * * *'

@@ -4,6 +4,7 @@
 name:  jd_digital_floor 数码加购京豆
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '10 0 * * *'

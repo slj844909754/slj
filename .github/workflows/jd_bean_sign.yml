@@ -4,6 +4,7 @@
 name: jd_bean_sign 京豆签到脚本
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '0 16 * * *'

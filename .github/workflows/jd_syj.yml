@@ -4,6 +4,7 @@
 name: jd_syj 京豆十元街
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '10 7 * * *'

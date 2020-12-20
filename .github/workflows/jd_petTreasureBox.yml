@@ -4,6 +4,7 @@
 name: jd_petTreasureBox 宠汪汪聚宝盆辅助脚本
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '10 0 * * *'

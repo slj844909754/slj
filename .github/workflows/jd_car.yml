@@ -4,6 +4,7 @@
 name: jd_car 京东汽车
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '10 7 * * *'

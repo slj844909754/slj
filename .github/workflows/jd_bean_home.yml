@@ -4,6 +4,7 @@
 name: jd_bean_home 领京豆额外奖励
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '10 7 * * *'

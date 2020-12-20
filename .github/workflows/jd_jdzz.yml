@@ -4,6 +4,7 @@
 name: jd_joy_feedPets 宠汪汪喂食脚本
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '10 11 * * *'

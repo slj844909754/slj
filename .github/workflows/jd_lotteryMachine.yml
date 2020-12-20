@@ -4,6 +4,7 @@
 name: jd_lotteryMachine 京东抽奖机
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '11 17 * * *'

@@ -4,6 +4,7 @@
 name: jd_shop 进店领豆脚本
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '0 16 * * *'

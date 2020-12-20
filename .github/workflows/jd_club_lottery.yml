@@ -4,6 +4,7 @@
 name: jd_club_lottery 摇京豆脚本
 
 on:
+  push:
   workflow_dispatch:
   schedule:
     - cron: '0 16 * * *'
