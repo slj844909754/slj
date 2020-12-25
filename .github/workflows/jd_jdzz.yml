@@ -7,11 +7,11 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '0 16/23 * * *'
   # watch:
   #   types: [started]
   repository_dispatch:
-    types: joy_jdzz&crazy_joy
+    types: joy_jdzz&jd_crazy_joy
 jobs:
   build:
 
@@ -32,7 +32,7 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【京东赚赚脚本】'
+      - name: '运行 【京东赚赚脚本&疯狂的joy】'
         run: |
           cd  ~/scripts
           npm install
