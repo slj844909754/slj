@@ -18,14 +18,15 @@ jobs:
       - name: Checkout
         run: |
           git clone https://github.com/lifeishard4me/Actions.git ~/Actions
-      - name: 提交和打印互助码
+      - name: 提交互助码
         run: |
           cd ~/Actions/.github
           chmod +x jd_sharecodes.sh
           ./jd_sharecodes.sh
           git clone -b master https://github.com/lxk0301/jd_scripts.git ~/scripts
           cd  ~/scripts
-          chmod +x jd_get_share_code.js
+          npm install
+          node jd_get_share_code.js
         env:
           PETSHARECODES: ${{ secrets.PETSHARECODES }}
           FRUITSHARECODES: ${{ secrets.FRUITSHARECODES }}
