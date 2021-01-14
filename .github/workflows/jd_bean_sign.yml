@@ -43,6 +43,7 @@ jobs:
           node jd_cash.js
           node jx_sign.js
           node jd_nh.js
+          node jd_new_shop.js
           wget https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
           node JD_DailyBonus.js
         env:
