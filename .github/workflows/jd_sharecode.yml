@@ -20,10 +20,10 @@ jobs:
           git clone https://github.com/lifeishard4me/Actions.git ~/Actions
       - name: 提交互助码
         run: |
-          cd ~/Actions/.github
+          cd ~/Actions/.github/scripts
           chmod +x jd_sharecodes.sh
           ./jd_sharecodes.sh
-          git clone -b master https://github.com/lxk0301/jd_scripts.git ~/scripts
+          git clone -b master https://github.com/qukaiyuan/JD_AUTO_SCRIPT.git ~/scripts
           cd  ~/scripts
           npm install
           node jd_get_share_code.js
