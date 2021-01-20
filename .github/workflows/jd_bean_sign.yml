@@ -7,7 +7,7 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron: '30 15,4 * * *'
+    - cron: '30 15,0 * * *'
   # watch:
   #   types: started
   repository_dispatch:
@@ -53,6 +53,7 @@ jobs:
           node jd_new_shop.js
           node jd_immortal.js
           node jd_jdzz.js
+          node jd_baiTiao.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
