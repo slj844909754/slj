@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: 获取 Scripts
         run: |
-          git clone -b main https://github.com/shylocks/Loon.git ~/scripts
+          git clone -b main https://gitlab.com/MrRight/Scripts.git ~/scripts
       - name: 获取备份仓库
         if: ${{ failure() }}
         run: |
@@ -39,7 +39,7 @@ jobs:
 
       - name: '运行 【京豆签到类:】'
         run: | #  
-          cd ~/scripts
+          cd ~/scripts/Loon-main/
           npm install 
           for js in jd_*.js; 
           do node $js;
