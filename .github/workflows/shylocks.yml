@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: 获取 Scripts
         run: |
-          git clone -b main https://gitlab.com/MrRight/Scripts.git ~/scripts
+          git clone -b master https://gitlab.com/MrRight/Scripts.git ~/scripts
       - name: 获取备份仓库
         if: ${{ failure() }}
         run: |
