@@ -11,7 +11,7 @@ on:
   # watch:
   #   types: started
   repository_dispatch:
-    types: 签到类
+    types: jd_bean_exchange
 jobs:
   Build-Nodejs-and-Scripts:
     runs-on: ubuntu-latest
@@ -37,11 +37,12 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
 
-      - name: '运行 【京豆签到类:】'
+      - name: '运行 【京豆兑换】'
         run: | #0点兑换  
           cd ~/scripts
           npm install
-          node set_jd_time.js & node jd_blueCoin.js & node jd_car_exchange.js & node jd_joy_reward.js 
+          node set_jd_time.js
+          node jd_blueCoin.js & node jd_car_exchange.js & node jd_joy_reward.js 
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
