@@ -42,7 +42,7 @@ jobs:
           cd ~/scripts/Loon-main/
           npm install
           for js in jd_*.js; 
-          do node $js;
+          do node $js &
           done
         shell: bash
         env:
