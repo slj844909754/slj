@@ -54,6 +54,7 @@ jobs:
           node jd_immortal.js
           node jd_jdzz.js
           node jd_baiTiao.js
+          node jd_paopao.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
