@@ -46,7 +46,7 @@ jobs:
         run: | #
           cd ~/scripts/Loon-main/
           for js in jd_*.js; 
-          do node $js
+          do node $js || true
           done
         shell: bash
         env:
