@@ -36,7 +36,7 @@ jobs:
           npm install
       - name: '运行 【美丽颜究院脚本】'
         run: |
-          curl -O https://raw.githubusercontent.com/slj844909754/jd_scripts/master/jd_mlyjy.js > /dev/null 2>&1
+          curl -O https://raw.githubusercontent.com/i-chenzhe/qx/main/jd_mlyjy.js > /dev/null 2>&1
           sed -ri -e "s/let helpAuthor = true/let helpAuthor = false/g"\
             -e "s/\(new Date\)\.getHours\(\)/((new Date().getUTCHours() + 8) % 24)/g"\
             -e "s/\(([\`\"\'])(\\\x47\\\x49\\\x54\\\x48\\\x55\\\x42|GI.HUB)\\1\)/('GxIxTxHxUxB')/g" jd_mlyjy.js
