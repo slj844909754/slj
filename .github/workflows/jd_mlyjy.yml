@@ -1,14 +1,17 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jd_mlyjy
+name: 美丽研究院
 
 on:
+  push:
   workflow_dispatch:
   schedule:
-    - cron: '28 23,4,10 * * *'
+    - cron: '1 23,6,16 * * *'
+  # watch:
+  #       types: started
   repository_dispatch:
-    types: mlyjy
+    types: 美丽研究院
 jobs:
   build:
 
@@ -17,7 +20,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone -b master https://gitlab.com/MrRight/Scripts.git ~/scripts
+          git clone -b master https://github.com/slj844909754/jd_Scripts.git ~/scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -27,31 +30,18 @@ jobs:
         env:
           cache-name: cache-node-modules
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: Cache node_modules
-        uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
-        env:
-          cache-name: cache-node-modules
-        with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: npm install
+      - name: '运行 【美丽研究院】'
         run: |
+          cd  ~/scripts
           npm install
-      - name: '运行 【美丽颜究院脚本】'
-        run: |
-          curl -O https://raw.githubusercontent.com/i-chenzhe/qx/main/jd_mlyjy.js > /dev/null 2>&1
-          sed -ri -e "s/let helpAuthor = true/let helpAuthor = false/g"\
-            -e "s/\(new Date\)\.getHours\(\)/((new Date().getUTCHours() + 8) % 24)/g"\
-            -e "s/\(([\`\"\'])(\\\x47\\\x49\\\x54\\\x48\\\x55\\\x42|GI.HUB)\\1\)/('GxIxTxHxUxB')/g" jd_mlyjy.js
-          node jd_mlyjy.js
+          node jd_beauty.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          UN_SUBSCRIBES: ${{ secrets.UN_SUBSCRIBES }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
-          QQ_SKEY: ${{ secrets.QQ_SKEY }}
-          QQ_MODE: ${{ secrets.QQ_MODE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
