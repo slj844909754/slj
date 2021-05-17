@@ -1,0 +1,35 @@
+{
+  "id": "slj.app.sub",
+  "name": "slj应用订阅",
+  "author": "slj",
+  "icon": "https://avatars.githubusercontent.com/u/5230432?s=400&u=b9f8f4631312cb0b2321564a2baf3df37436935f&v=4",
+  "repo": "https://github.com/slj844909754/slj",
+  "apps": [
+    {
+      "id": "z_health_community",
+      "name": "health兑换",
+      "keys": [
+        "Z_HEALTH_EXCHANGE"
+      ],
+      "settings": [
+        {
+          "id": "Z_HEALTH_EXCHANGE",
+          "name": "health兑换",
+          "val": "",
+          "type": "text",
+          "desc": "如兑换京豆请填写包含京豆的兑换关键词 例 3京东 10京豆；如兑换非京豆物品，请尽可能填写可唯一判定的物品名称;"
+        }
+      ],
+      "icons": [
+        "https://raw.githubusercontent.com/58xinian/icon/master/jd_bean_home.png",
+        "https://raw.githubusercontent.com/58xinian/icon/master/jd_bean_home.png"
+      ],
+      "author": "@slj",
+      "repo": "https://github.com/slj844909754/slj",
+      "script": "https://raw.githubusercontent.com/slj844909754/slj/main/z_health_community.js",
+      "descs_html": [
+        "作者仓库：【<a href=\"https://github.com/slj844909754/slj\">https://github.com/slj844909754/slj</a>】"
+      ]
+    }
+  ]
+}
